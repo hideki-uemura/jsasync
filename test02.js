@@ -26,7 +26,7 @@ const start = function () {
                     resolve("成功しました１！");
                 },
                 error: function () {
-                    resolve("なにかが失敗した");
+                    reject("なにかが失敗した");
                 }
             })
         }
@@ -63,7 +63,7 @@ const start = function () {
                     resolve("成功しました２！");
                 },
                 error: function () {
-                    resolve("なにかが失敗した");
+                    reject("なにかが失敗した");
                 }
             })
         }
@@ -79,9 +79,9 @@ const start = function () {
     //移行はthenでチェーンしてpromiseを返すFunction自体を引数につなぐ
     prosecc01()
         .then(prosecc02)
-        .then(prosecc03)
+        .then(prosecc03,prosecc03)
         .then(prosecc04)
-        .then(prosecc05)
+        .then(prosecc05,prosecc05)
 }
 
 document.addEventListener("DOMContentLoaded", start);
